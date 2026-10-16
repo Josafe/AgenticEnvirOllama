@@ -5,7 +5,7 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$Name,
 
-    [string]$Model = "qwen2.5-coder:32b",
+    [string]$Model,
 
     [string]$RunnerScript,
     [string]$ValidatorScript,
@@ -14,6 +14,13 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+
+trap {
+    Write-Host ""
+    Write-Host "=== Specification Workflow Failed ===" -ForegroundColor Red
+    Write-Host "ERROR: $($_.Exception.Message)" -ForegroundColor Red
+    exit 2
+}
 
 $root = Split-Path -Parent $PSScriptRoot
 
@@ -60,6 +67,12 @@ else {
 
 $maxRevisions = 3
 
+$modelArgs = @{}
+if ($PSBoundParameters.ContainsKey('Model')) {
+    $modelArgs.Model = $Model
+}
+$modelLabel = if ($modelArgs.Count -gt 0) { $Model } else { "(resolved per agent from config)" }
+
 if (-not (Test-Path $runner)) {
     throw "Agent runner not found: $runner"
 }
@@ -83,7 +96,7 @@ if (-not (Test-Path $specDirectory)) {
 Write-Host ""
 Write-Host "=== Specification Workflow ===" -ForegroundColor Cyan
 Write-Host "Name  : $Name"
-Write-Host "Model : $Model"
+Write-Host "Model : $modelLabel"
 Write-Host ""
 
 # ------------------------------------------------------------
@@ -97,7 +110,7 @@ Remove-Item $specFile -Force -ErrorAction SilentlyContinue
 & $runner `
     -Agent "spec" `
     -Task $Task `
-    -Model $Model `
+    @modelArgs `
     -OutputFile $specFile
 
 if ($LASTEXITCODE -ne 0) {
@@ -127,8 +140,19 @@ Write-Host ""
 Write-Host "Step 2 - Validating specification structure..." -ForegroundColor Yellow
 Write-Host ""
 
-& $validator `
-    -SpecFile $specFile
+& $validator -SpecFile $specFile
+
+if ($LASTEXITCODE -eq 3) {
+    Write-Host ""
+    Write-Host "=== Specification Needs Human Input ===" -ForegroundColor Yellow
+    Write-Host "The task does not contain enough information to specify."
+    Write-Host "See Open Questions in: $specFile"
+    exit 3
+}
+
+if ($LASTEXITCODE -ne 0) {
+    # ...el bloque que ya tienes...
+}
 
 if ($LASTEXITCODE -ne 0) {
     Write-Host ""

@@ -1,0 +1,4 @@
+specs/smoke-*
+specs/insufficient-*
+specs/test-*
+specs/mock-*

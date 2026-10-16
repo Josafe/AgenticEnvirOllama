@@ -146,4 +146,17 @@ An agent must not conceal or bypass a failing verification step merely to report
 
 ## Context Discipline
 
-Agents should use the minimum
+Agents should use the minimum context necessary to complete their task and
+must not assume information that is not present in the prompt.
+
+## Output Precedence
+
+If an agent role file defines its own output format, that format replaces the
+Agent Result structure. The Agent Result structure applies only to agents
+without a defined output format.
+
+## Execution Environment
+
+Agents run without file system or tool access. INSPECT means reading only the
+context included in the prompt. Never claim to have run commands, tests or
+checks.

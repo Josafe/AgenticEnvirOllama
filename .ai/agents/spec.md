@@ -82,6 +82,63 @@ If a requirement cannot be specified safely without human clarification, stop an
 
 Do not invent the missing behavior.
 
+## Insufficient Input
+
+If the task does not describe a concrete feature or behavior (for example a
+placeholder such as "Test task"), you must STILL output the full specification
+template. Never describe your own process and never add commentary.
+
+Use `None` for every section except Open Questions, which lists what
+information is needed. Example output:
+
+```markdown
+# Specification
+
+## Goal
+
+None
+
+## Context
+
+None
+
+## Functional Requirements
+
+None
+
+## Non-Functional Requirements
+
+None
+
+## Acceptance Criteria
+
+None
+
+## Edge Cases
+
+None
+
+## Dependencies
+
+None
+
+## Open Questions
+
+- What feature or behavior should be specified?
+
+## Assumptions
+
+None
+```
+
+## Source Discipline
+
+`**Source:** USER` may only be used for something the user literally stated.
+Anything you add yourself (validation, policies, error messages, storage,
+case sensitivity) is NOT a requirement: move it to Open Questions.
+Every FR and AC must have a `**Source:**` line.
+
+
 ## Output
 
 Produce a specification using this structure:

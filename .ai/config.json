@@ -1,0 +1,15 @@
+{
+    "ollamaUrl": "http://localhost:11434",
+    "defaultModel": "qwen2.5-coder:32b",
+    "agentModels": {
+            "spec": "deepseek-r1:32b",
+            "spec-reviewer": "deepseek-r1:32b",
+            "spec-reviser": "qwen2.5-coder:32b"
+            },
+    "options": {
+        "temperature": 0.2,
+        "num_ctx": 16384
+    },
+    "timeoutSec": 900,
+    "stripThinking": true
+}
