@@ -194,10 +194,11 @@ for ($revision = 0; $revision -le $maxRevisions; $revision++) {
     Write-Host ""
 
     Remove-Item $currentReviewFile -Force -ErrorAction SilentlyContinue
+
     & $reviewer `
         -Task $Task `
         -SpecFile $currentSpecFile `
-        -Model $Model `
+        @modelArgs `
         -OutputFile $currentReviewFile
 
     $reviewExitCode = $LASTEXITCODE
@@ -286,7 +287,7 @@ for ($revision = 0; $revision -le $maxRevisions; $revision++) {
         -Task $Task `
         -SpecFile $currentSpecFile `
         -ReviewFile $currentReviewFile `
-        -Model $Model `
+        @modelArgs `
         -OutputFile $nextSpecFile
 
     if ($LASTEXITCODE -ne 0) {
