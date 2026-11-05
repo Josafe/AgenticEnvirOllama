@@ -151,10 +151,6 @@ if ($LASTEXITCODE -eq 3) {
 }
 
 if ($LASTEXITCODE -ne 0) {
-    # ...el bloque que ya tienes...
-}
-
-if ($LASTEXITCODE -ne 0) {
     Write-Host ""
     Write-Host "=== Specification Workflow Failed ===" -ForegroundColor Red
     Write-Host "Generated specification failed structural validation." -ForegroundColor Red

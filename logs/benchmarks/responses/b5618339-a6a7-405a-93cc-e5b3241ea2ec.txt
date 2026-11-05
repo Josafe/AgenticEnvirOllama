@@ -1,0 +1,13 @@
+To effectively utilize the AI Development Harness, it's crucial to provide clear and detailed requests. The test input "test" was too vague, leading the Specification Agent to return a minimal specification with unresolved questions. Here's how to approach the harness effectively:
+
+1. **Provide Detailed Requests**: Ensure your input is specific and detailed. Clearly outline the feature's purpose, functionality, and any constraints or edge cases.
+
+2. **Understand Agent Roles**: Recognize that each agent has a specific role. The Specification Agent transforms requests into specifications, while others handle architecture, implementation, testing, and reviews.
+
+3. **Follow the Structure**: The response follows a strict format, including sections like Goal, Context, and Requirements. This ensures clarity and completeness.
+
+4. **Avoid Assumptions**: Agents avoid making assumptions without explicit permission, preventing unnecessary features or misaligned products.
+
+5. **Iterate and Refine**: Be prepared to iterate. If the initial request is too vague, the agents will prompt for more details, allowing you to refine your request and proceed effectively.
+
+By providing thorough input and understanding the structured approach, you can leverage the harness to streamline development, ensuring alignment with project goals and systematic progress.

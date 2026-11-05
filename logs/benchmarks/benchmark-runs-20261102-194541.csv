@@ -1,0 +1,9 @@
+﻿"run_id","model","agent","iteration","status","exit_code","process_duration_ms","model_duration_ms","load_duration_ns","prompt_eval_count","prompt_eval_duration_ns","prompt_tokens_per_second","eval_count","eval_duration_ns","generation_tokens_second","error","response_file"
+"9b4fba30-04a3-49b5-94e2-a95b78c01539","qwen2.5-coder:7b","spec","1","error","1","4844",,,"0",,"0","0",,"0","
+=== AI Development Harness ===
+Agent : spec
+Model : qwen2.5-coder:7b
+Server: http://localhost:11434
+
+
+ERROR: Ollama is not reachable at http://localhost:11434. Make sure Ollama is running.",""

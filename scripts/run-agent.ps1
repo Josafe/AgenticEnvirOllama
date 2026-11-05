@@ -15,6 +15,7 @@ trap {
 }
 
 . (Join-Path $PSScriptRoot "lib\config.ps1")
+. (Join-Path $PSScriptRoot "lib\telemetry.ps1")
 
 # ---------- 1. Validación de entrada (sin tocar config ni Ollama) ----------
 
@@ -135,6 +136,8 @@ $bodyBytes = (New-Object System.Text.UTF8Encoding($false)).GetBytes($body)
 Write-Host "Sending task to Ollama..." -ForegroundColor Yellow
 Write-Host ""
 
+$modelCallStartedAt = [datetime]::UtcNow
+
 try {
     $response = Invoke-RestMethod `
         -Uri "$ollamaUrl/api/generate" `
@@ -144,6 +147,16 @@ try {
         -TimeoutSec $timeoutSec
 }
 catch {
+    $modelErrorMessage = $_.Exception.Message
+
+    Write-HarnessModelTelemetry `
+        -Root (Split-Path -Parent $PSScriptRoot) `
+        -Agent $Agent `
+        -Model $Model `
+        -StartedAt $modelCallStartedAt `
+        -Status "error" `
+        -ErrorMessage $modelErrorMessage
+
     Write-Host "=== OLLAMA ERROR ===" -ForegroundColor Red
 
     if ($_.Exception.Response) {
@@ -156,13 +169,20 @@ catch {
         catch { }
     }
     else {
-        Write-Host $_.Exception.Message -ForegroundColor Yellow
+        Write-Host $modelErrorMessage -ForegroundColor Yellow
     }
 
     Write-Host "=== END OLLAMA ERROR ===" -ForegroundColor Red
     throw "Agent execution failed."
 }
 
+Write-HarnessModelTelemetry `
+    -Root (Split-Path -Parent $PSScriptRoot) `
+    -Agent $Agent `
+    -Model $Model `
+    -StartedAt $modelCallStartedAt `
+    -Status "success" `
+    -Response $response
 # ---------- 7. Resultado ----------
 
 $result = "$($response.response)"

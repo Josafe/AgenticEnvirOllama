@@ -1,0 +1,28 @@
+# Specification
+
+## Goal
+Describe the intended outcome.
+
+## Context
+None
+
+## Functional Requirements
+None
+
+## Non-Functional Requirements
+None
+
+## Acceptance Criteria
+None
+
+## Edge Cases
+None
+
+## Dependencies
+None
+
+## Open Questions
+- What is the intended functionality or behavior that needs to be specified?
+
+## Assumptions
+None

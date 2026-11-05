@@ -1,0 +1,2 @@
+﻿"model","total_runs","successful_runs","failed_runs","avg_process_duration_ms","avg_model_duration_ms","avg_prompt_tokens","avg_output_tokens","avg_prompt_tokens_per_sec","avg_generation_tokens_sec"
+"qwen2.5-coder:32b","2","2","0","78801,5","76114","3843","196,5","6862,54","2,6"

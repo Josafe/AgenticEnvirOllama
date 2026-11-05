@@ -1,0 +1,27 @@
+# Specification
+
+## Goal
+Benchmark the performance of a telemetry model in terms of latency and throughput.
+
+## Functional Requirements
+### FR-001
+**Source:** USER
+The benchmark should measure the latency of the telemetry model's response to input data.
+
+### FR-002
+**Source:** USER
+The benchmark should measure the throughput of the telemetry model, defined as the number of data points processed per second.
+
+## Acceptance Criteria
+### AC-001
+**Source:** USER
+The benchmark tool should output latency results in milliseconds for a set of test data.
+
+### AC-002
+**Source:** USER
+The benchmark tool should output throughput results in data points per second for a set of test data.
+
+## Edge Cases
+### EC-001
+**Source:** ASSUMPTION
+The benchmark tool should handle scenarios where the telemetry model does not respond within a reasonable time frame, indicating potential performance issues.

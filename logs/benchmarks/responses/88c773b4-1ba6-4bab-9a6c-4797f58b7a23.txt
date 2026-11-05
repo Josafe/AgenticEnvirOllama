@@ -1,0 +1,28 @@
+# Specification
+
+## Goal
+None
+
+## Context
+None
+
+## Functional Requirements
+None
+
+## Non-Functional Requirements
+None
+
+## Acceptance Criteria
+None
+
+## Edge Cases
+None
+
+## Dependencies
+None
+
+## Open Questions
+What is the intended outcome of the request? Please provide more details.
+
+## Assumptions
+None

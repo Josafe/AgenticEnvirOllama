@@ -1,0 +1,30 @@
+# Specification
+
+## Goal
+Create a benchmark to measure the performance of a model's telemetry data processing.
+
+## Functional Requirements
+### FR-001
+**Source:** USER
+The benchmark should support the processing of telemetry data from multiple sources simultaneously.
+
+### FR-002
+**Source:** USER
+The benchmark should provide detailed performance metrics for each source, including latency and throughput.
+
+## Acceptance Criteria
+### AC-001
+**Source:** USER
+The benchmark should be able to handle at least 1000 telemetry data points per second from each source.
+
+### AC-002
+**Source:** USER
+The benchmark should generate and display a report summarizing the performance metrics for each source.
+
+## Edge Cases
+### EC-001
+**Source:** USER
+What happens if a source stops sending telemetry data during the benchmark?
+
+## Assumptions
+None

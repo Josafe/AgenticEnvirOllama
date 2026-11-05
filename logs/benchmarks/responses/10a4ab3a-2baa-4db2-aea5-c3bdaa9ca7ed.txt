@@ -1,0 +1,36 @@
+The AI Development Harness is a structured framework designed to guide software development systematically, ensuring adherence to specifications and clear role separation. Here's a breakdown of its key components and functionalities:
+
+1. **Agent Roles**:
+   - **Orchestrator**: Coordinates the workflow, assigning tasks to specialized agents in sequence.
+   - **Specification Agent**: Transforms user requirements into explicit specifications without implementing code.
+   - **Architect Agent**: Designs technical architecture based on specifications.
+   - **Developer Agent**: Implements production code, tests, and configuration, adhering to specifications.
+   - **QA Agent**: Validates implementation against specifications.
+   - **Reviewer Agent**: Ensures code quality, checks for bugs, and maintains code health.
+
+2. **Workflow**:
+   - Starts with a human request, moving through specification, architecture, implementation, testing, review, and human approval before integration.
+   - Ensures each step is thoroughly vetted, minimizing errors and ensuring alignment with initial requirements.
+
+3. **Core Principles**:
+   - Specifications as the source of truth.
+   - Inspection before modification.
+   - Smallest safe changes.
+   - Tests as part of implementation.
+   - No silent requirement changes.
+   - Explicit uncertainty and traceability.
+
+4. **Execution Model**:
+   - Agents follow a structured execution process: receive, inspect, analyze, act, verify, and report.
+   - Ensures consistency and integrity across all agents.
+
+5. **Traceability**:
+   - Documents decisions and changes through specifications, architecture, tests, and Git history.
+   - Facilitates tracking of issues and understanding past decisions.
+
+6. **Handling Edge Cases and Contradictions**:
+   - Unresolved questions are flagged by the Specification Agent.
+   - The Orchestrator handles these by seeking clarification or escalating as needed.
+
+**Conclusion**:
+The AI Development Harness is a comprehensive tool for managing software development projects, ensuring reliability and consistency. It minimizes human error and ensures thorough vetting of changes, leading to higher quality software. By following the structured workflow and adhering to core principles, the harness guides projects from initial request to successful integration, maintaining alignment with specifications throughout.

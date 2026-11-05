@@ -1,0 +1,2 @@
+﻿"run_id","model","agent","iteration","status","exit_code","process_duration_ms","model_duration_ms","load_duration_ns","prompt_eval_count","prompt_eval_duration_ns","prompt_tokens_per_second","eval_count","eval_duration_ns","generation_tokens_second","error","response_file"
+"88b16c7b-dad5-4ba1-b774-3cd00ed1ff10","qwen2.5-coder:7b","spec","1","success","0","15489","12643","8889555100","3843","1078233000","3564,16","214","2605299000","82,14","","C:\Users\josaf\Desktop\Projectes\AI-Dev-Harness\logs\benchmarks\responses\88b16c7b-dad5-4ba1-b774-3cd00ed1ff10.txt"

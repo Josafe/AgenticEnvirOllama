@@ -1,0 +1,4 @@
+﻿"model","total_runs","successful_runs","failed_runs","avg_process_duration_ms","avg_model_duration_ms","avg_prompt_tokens","avg_output_tokens","avg_prompt_tokens_per_sec","avg_generation_tokens_sec"
+"qwen2.5-coder:7b","3","3","0","5222,33","2597,67","3843","208","185596,37","84,96"
+"qwen2.5-coder:32b","3","2","1","96551","93817","3843","200,5","5553,18","2,78"
+"deepseek-r1:32b","3","3","0","252149","249189","3833","607","5674,77","2,61"
